@@ -1,0 +1,37 @@
+{
+  "cyclones": [
+    {
+      "name": "Cyclone Remal (2024)",
+      "region": "Bay of Bengal — Odisha / West Bengal Coast (India)",
+      "wind_speed_kmh": 135,
+      "category": 1,
+      "surge_height_m": 2.8,
+      "rainfall_mm": 240,
+      "pressure_mb": 978,
+      "center_lat": 21.65,
+      "center_lon": 87.85
+    },
+    {
+      "name": "Cyclone Amphan (2020)",
+      "region": "Bay of Bengal — Chattogram / Cox's Bazar (Bangladesh)",
+      "wind_speed_kmh": 240,
+      "category": 4,
+      "surge_height_m": 5.8,
+      "rainfall_mm": 410,
+      "pressure_mb": 920,
+      "center_lat": 21.43,
+      "center_lon": 91.97
+    },
+    {
+      "name": "Cyclone Biparjoy (2023)",
+      "region": "APAC Coastal Region — Central Coast (Vietnam)",
+      "wind_speed_kmh": 165,
+      "category": 3,
+      "surge_height_m": 3.4,
+      "rainfall_mm": 290,
+      "pressure_mb": 955,
+      "center_lat": 16.05,
+      "center_lon": 108.20
+    }
+  ]
+}
