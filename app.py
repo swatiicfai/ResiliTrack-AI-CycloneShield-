@@ -157,8 +157,8 @@ with tab1:
     st.subheader("🌐 Hyper-Local Hydro-Elevation & Critical Asset Exposure Map")
     st.markdown("Google Earth Engine elevation matrix overlaid with predicted storm surge inundation zones and OpenStreetMap critical infrastructure points.")
     
-    # Initialize Folium Map
-    m = folium.Map(location=[center_lat, center_lon], zoom_start=11, tiles="CartoDB dark_matter")
+    # Initialize Folium Map with clean tile layer
+    m = folium.Map(location=[center_lat, center_lon], zoom_start=11, tiles="OpenStreetMap")
     
     # Add Storm Surge Flood Buffer Polygon around coast
     surge_polygon_coords = [
