@@ -22,11 +22,16 @@ Analyze the following real-time cyclone hazard simulation telemetry and infrastr
 - **Submerged Arterial Road Segments**: {metrics['flooded_roads_km']} km
 - **Power Sub-station Failure Risk**: {metrics['power_grid_risk_pct']}%
 
+SYSTEM INSTRUCTIONS (EDGE CASE HANDLING):
+1. If the metrics indicate a minor storm (e.g., wind speed < 119 km/h, surge < 1.0m, or low infrastructure risk), scale down the threat level to "MODERATE" or "LOW", and focus tactical commands on basic preparedness rather than mass evacuation. Do NOT trigger panic for minor events.
+2. If the infrastructure damage risk is negligible (e.g., 0 isolated hospitals, 0 flooded roads), clearly state that critical infrastructure is secure and expected to remain operational.
+3. If the event severity does not meet the threshold for catastrophic damage, set the parametric insurance payout trigger to "PENDING" or "NOT MET". Only trigger "APPROVED" for Category 3+ cyclones or significant surge risk.
+
 Based on this telemetry, generate a structured emergency response report with the following EXACT JSON structure (return ONLY raw valid JSON without markdown formatting):
 
 {{
-  "threat_level": "CRITICAL / SEVERE / MODERATE",
-  "executive_summary": "Concise 2-sentence overview of landfall impact and critical threats.",
+  "threat_level": "CRITICAL / SEVERE / MODERATE / LOW",
+  "executive_summary": "Concise 2-sentence overview of landfall impact and critical threats (proportional to the actual data).",
   "priority_evacuation_zones": [
     "Sub-district A (Low-lying coastal belt)",
     "Sub-district B (Estuary river basin)"
@@ -48,9 +53,9 @@ Based on this telemetry, generate a structured emergency response report with th
     "regional_hindi": "आपातकालीन चेतावनी: तटीय क्षेत्रों के निवासी तुरंत निकटतम चक्रवात राहत शिविर में जाएं।"
   }},
   "parametric_insurance": {{
-    "payout_trigger": "APPROVED / PENDING",
+    "payout_trigger": "APPROVED / PENDING / NOT MET",
     "severity_index": 8.7,
-    "recommended_liquidity_usd": "$2,500,000 for immediate pre-landfall relief"
+    "recommended_liquidity_usd": "$2,500,000 for immediate pre-landfall relief (or $0 if not met)"
   }}
 }}
 """

@@ -1,0 +1,8 @@
+.git
+.gitignore
+.dockerignore
+__pycache__/
+*.pyc
+.streamlit/
+sample_cyclone_data.json
+README.md
